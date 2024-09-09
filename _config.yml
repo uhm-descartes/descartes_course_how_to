@@ -1,10 +1,10 @@
-A# MOREA CONFIGURATION FILE
+# MOREA CONFIGURATION FILE
 # See https://morea-framework.github.io/docs/instructors/config-yml
 
 # SITE SPECIFIC: The following fields are typically changed for each site
 name: DESCARTES Module How-To
 baseurl: /howto
-morea_theme: spacelab
+morea_theme: cerulean-green
 timezone: Pacific/Honolulu
 morea_navbar_items:
   - Prerequisites
