@@ -5,14 +5,14 @@ morea_type: home
 published: true
 ---
 
-## Welcome to ICS 199, Fall 2021
+## DESCARTES Module
 
 <div class="alert alert-danger" role="alert" markdown="1">
 
   <i class="fa-solid fa-circle-exclamation fa-xl"></i> **Warning: this is not a website for a real course.**
   <hr/>
   
-  It is actually the "demo" site for the Morea Framework. 
+  It is actually the "demo" site for building DESCARTES Modules. 
 
   See the <a href="https://morea-framework.github.io">Morea Framework Project Site</a> for details.
 </div>
