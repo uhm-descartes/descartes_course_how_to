@@ -50,7 +50,7 @@ jobs:
         env:
           DEPLOY_URL: ${{ steps.deployment.outputs.page_url }}
           COURSE_REPOSITORY: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DESCARTES_TOKEN: "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" # ${{ secrets.DESCARTES_TOKEN }}
         run: |
           # Extract course name, course full name, and description from _config.yml
           if [ -f "current-repo/_config.yml" ]; then
@@ -75,7 +75,7 @@ jobs:
           cd descartes-modules
           
           # Debug: Check if token is available
-          if [ -z "$GITHUB_TOKEN" ]; then
+          if [ -z "$DESCARTES_TOKEN" ]; then
             echo "ERROR: DESCARTES_TOKEN secret is not set!"
             exit 1
           fi
