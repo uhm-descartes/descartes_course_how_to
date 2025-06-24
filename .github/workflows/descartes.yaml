@@ -54,7 +54,7 @@ jobs:
         run: |
           # Extract course name, course full name, and description from _config.yml
           if [ -f "current-repo/_config.yml" ]; then
-            COURSE_NAME=$(grep "^morea_course:" current-repo/_config.yml | sed 's/morea_course: *//' | tr -d '"' | tr '[:upper:]' '[:lower:]')
+            COURSE_NAME=$(grep "^morea_course:" current-repo/_config.yml | sed 's/morea_course: *//' | tr -d '"' | tr '[:lower:]' '[:upper:]')
             COURSE_FULL_NAME=$(grep "^morea_course_name:" current-repo/_config.yml | sed 's/morea_course_name: *//' | tr -d '"')
             COURSE_DESCRIPTION=$(grep "^morea_description:" current-repo/_config.yml | sed 's/morea_description: *//' | tr -d '"')
             COURSE_PREREQUISITES=$(grep "^morea_course_prerequisites:" current-repo/_config.yml | sed 's/morea_course_prerequisites: *//' | tr -d '"')
@@ -112,7 +112,7 @@ jobs:
           fi
           
           # Create a new branch
-          BRANCH_NAME="update-$COURSE_NAME-$(date +%s)"
+          BRANCH_NAME="update-${COURSE_NAME// /}-$(date +%s)"
           git checkout -b "$BRANCH_NAME"
           
           if grep -q "^$COURSE_NAME," "$CSV_FILE"; then
