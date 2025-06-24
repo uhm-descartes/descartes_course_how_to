@@ -39,13 +39,13 @@ jobs:
         with:
           path: current-repo
       
-      - name: Update Descartes Course Registry
+      - name: Remote Descartes Course repository
         uses: actions/checkout@v4
         with:
           repository: uhm-descartes/descartes-modules
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: "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" # ${{ secrets.DESCARTES_TOKEN }}"
           path: descartes-modules
-      
+
       - name: Update CSV and Create Pull Request
         env:
           DEPLOY_URL: ${{ steps.deployment.outputs.page_url }}
