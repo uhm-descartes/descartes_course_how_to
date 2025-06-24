@@ -43,14 +43,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: uhm-descartes/descartes-modules
-          token: ${{ secrets.DESCARTES_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           path: descartes-modules
       
       - name: Update CSV and Create Pull Request
         env:
           DEPLOY_URL: ${{ steps.deployment.outputs.page_url }}
           COURSE_REPOSITORY: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ secrets.DESCARTES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Extract course name, course full name, and description from _config.yml
           if [ -f "current-repo/_config.yml" ]; then
