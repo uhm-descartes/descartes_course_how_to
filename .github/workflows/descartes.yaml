@@ -40,6 +40,7 @@ jobs:
         with:
           repository: uhm-descartes/descartes-modules
           path: descartes-modules
+          ssh-key: ${{ secrets.DESCARTES_SSH_KEY }}
 
       - name: Update CSV and Create Pull Request
         env:
