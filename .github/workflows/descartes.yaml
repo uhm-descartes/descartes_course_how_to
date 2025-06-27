@@ -16,7 +16,7 @@ on:
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: write
-  pages: write
+  pull-requests: write
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
@@ -40,10 +40,11 @@ jobs:
         with:
           repository: uhm-descartes/descartes-modules
           path: descartes-modules
-          ssh-key: ${{ secrets.DESCARTES_SSH_KEY }}
+          token: ${{ secrets.DESCARTES_TOKEN }}
 
       - name: Update CSV and Create Pull Request
         env:
+          GH_TOKEN: ${{ secrets.DESCARTES_TOKEN }}
           COURSE_URL: ${{ steps.deployment.outputs.page_url }}
           COURSE_REPOSITORY: ${{ github.repository }}
           DESCARTES_COURSES_DIR: "descartes-modules"
@@ -59,14 +60,9 @@ jobs:
             echo "Found course description: $COURSE_DESCRIPTION"
             COURSE_PREREQUISITES=$(grep "^morea_prerequisites:" current-repo/_config.yml | sed 's/morea_prerequisites: *//' | tr -d '"')
             echo "Found course prerequisites: $COURSE_PREREQUISITES"
-            
-            # Escape commas in full name and description for CSV format
-            COURSE_FULL_NAME=$(echo "$COURSE_FULL_NAME" | sed 's/,/;/g')
-            COURSE_DESCRIPTION=$(echo "$COURSE_DESCRIPTION" | sed 's/,/;/g')
-            COURSE_PREREQUISITES=$(echo "$COURSE_PREREQUISITES" | sed 's/,/;/g')
           else
             echo "ERROR: _config.yml not found!"
-            exit 1
+            exit 11
           fi
 
           cd $DESCARTES_COURSES_DIR
@@ -74,9 +70,10 @@ jobs:
           echo "Configure git"
           git config --local user.name "UHM DESCARTES Action Bot"
           git config --local user.email "uhmnrt@hawaii.edu"
+          git config --local user.password "$GH_TOKEN"
           
           echo "Check if the exact entry already exists (with full name and description)"
-          EXPECTED_ENTRY="$COURSE_NAME,$COURSE_URL,$COURSE_FULL_NAME,$COURSE_DESCRIPTION,$COURSE_PREREQUISITES,$COURSE_REPOSITORY"
+          EXPECTED_ENTRY="\"$COURSE_NAME\",\"$COURSE_URL\",\"$COURSE_FULL_NAME\",\"$COURSE_DESCRIPTION\",\"$COURSE_PREREQUISITES\",\"$COURSE_REPOSITORY\""
           if grep -Fxq "$EXPECTED_ENTRY" "$DESCARTES_COURSES_CSV"; then
             echo "Entry '$EXPECTED_ENTRY' already exists in CSV file. Skipping update."
             exit 0
