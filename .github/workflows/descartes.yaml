@@ -1,4 +1,3 @@
-
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
@@ -31,6 +30,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Get Deployment URL
+        id: deployment
+        uses: actions/configure-pages@v4
+
       - name: Checkout current repository
         uses: actions/checkout@v4
         with:
@@ -51,7 +54,7 @@ jobs:
           DESCARTES_COURSES_DIR: "descartes-modules"
           DESCARTES_COURSES_CSV: "course-sites/descartes-courses.csv"
         run: |
-          echo "Extract course name, course full name, and description from _config.yml"
+          echo "Extract course name, course full name, description, and prerequisites from _config.yml"
           if [ -f "current-repo/_config.yml" ]; then
             COURSE_NAME=$(grep "^morea_course:" current-repo/_config.yml | sed 's/morea_course: *//' | tr -d '"' | tr '[:lower:]' '[:upper:]')
             echo "Found course name: $COURSE_NAME"
