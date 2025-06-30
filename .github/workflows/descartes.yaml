@@ -102,7 +102,8 @@ jobs:
             echo "Updated existing $COURSE_NAME entry with: $COURSE_URL, full name: $COURSE_FULL_NAME, and description: $COURSE_DESCRIPTION"
           else
             echo "Append new entry with full name and description"
-            echo "$EXPECTED_ENTRY" >> "$DESCARTES_COURSES_CSV"
+            echo -e "\n$EXPECTED_ENTRY" >> "$DESCARTES_COURSES_CSV"
+            sed -i '/^\s*$/d' "$DESCARTES_COURSES_CSV"
             echo "Added new $COURSE_NAME entry with: $COURSE_URL, full name: $COURSE_FULL_NAME, and description: $COURSE_DESCRIPTION"
           fi
           
