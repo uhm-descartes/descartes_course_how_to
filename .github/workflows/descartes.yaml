@@ -1,3 +1,4 @@
+
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
@@ -63,6 +64,15 @@ jobs:
           else
             echo "ERROR: _config.yml not found!"
             exit 11
+          fi
+
+          if [ -z "$COURSE_URL" ]; then
+            echo "Pages deployment not configured"
+            exit 1
+          fi
+          if [ -z "$COURSE_NAME" ]; then
+            echo "No MOREA Course Name defined in _config.yaml"
+            exit 1
           fi
 
           cd $DESCARTES_COURSES_DIR
