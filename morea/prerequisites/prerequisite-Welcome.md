@@ -1,5 +1,5 @@
 ---
-title: "DESCARTES Welcome"
+title: "UHM DESCARTES Welcome"
 published: true
 morea_id: descartes-welcome
 morea_url: https://descartes.manoa.hawaii.edu/descartes-modules/descartes-welcome/
