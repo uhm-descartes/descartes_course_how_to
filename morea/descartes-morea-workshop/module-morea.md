@@ -22,6 +22,7 @@ morea_experiences:
 morea_assessments:
   - assessment-morea-module
 morea_prerequisites:
+  - descartes-welcome
 morea_type: module
 morea_icon_url: /morea/descartes-morea-workshop/morea-logo.png
 morea_labels:
