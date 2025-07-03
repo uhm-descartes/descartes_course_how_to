@@ -38,11 +38,15 @@ jobs:
     steps:
       # Doc: https://github.com/marketplace/actions/checkout
       - name: Checkout Current Repository
+        id: checkout
         uses: actions/checkout@v4
         if: github.repository != env.SOURCE_REPOSITORY
+        with:
+          token: ${{ secrets.DESCARTES_TOKEN }}
 
       # Doc: https://github.com/marketplace/actions/actions-template-sync
-      - name: actions-template-sync
+      - name: Synchronize
+        id: synchronize
         uses: AndreasAugustin/actions-template-sync@v1.1.8
         if: github.repository != env.SOURCE_REPOSITORY
         with:
