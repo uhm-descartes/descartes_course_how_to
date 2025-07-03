@@ -2,9 +2,10 @@
 # See https://morea-framework.github.io/docs/instructors/config-yml
 
 # SITE SPECIFIC: The following fields are typically changed for each site
-name: "UHM DESCARTES Course How-To"
-baseurl: /howto
-morea_theme: cerulean-green
+name: ICS 311
+title: "ICS 311: Software Engineering"
+baseurl: /morea
+morea_theme: spacelab
 timezone: Pacific/Honolulu
 morea_navbar_items:
   - Prerequisites
@@ -18,9 +19,10 @@ logger_factory:
   Morea: error
 
 # MOREA PORTAL: The following fields are only needed if this site is part of a "Morea Portal".
-morea_course: DES 101
-morea_course_name: UHM DESCARTES Course How-To
-morea_description: A course to demonstrate how to use the MOREA Template to create a DESCARTES course. 
+# morea_course: ICS 311
+# morea_course_name: "ICS 311: Software Engineering"
+# morea_course_description: "This course covers the principles and practices of software engineering, including requirements analysis, design, implementation, testing, and maintenance."
+# morea_course_prerequisites: "ICS 110,ICS 211"
 # morea_domain: http://morea-framework.github.io/
 # morea_google_analytics_tracking_id: "<your tracking id here>"
 # morea_head_breadcrumb_link: "http://cnn.com"
