@@ -1,6 +1,7 @@
-ics311 = {
+des201 = {
 modules: [
-  { course: "ics311", title: "Ethics in Software Engineering", moduleUrl: "/modules/ethics", sort_order: 125, description: "<p>Ethics: A group of moral principles or values that define or direct us to the right choice.</p>\n" }
+  { course: "DES 201", title: "Foundations of MOREA and GitHub", moduleUrl: "/howto/modules/module-foundations", sort_order: 10, description: "Introductory module covering the structure of MOREA and basic GitHub setup.\n", descartesModule: false},
+  { course: "DES 201", title: "Cloning and Running the MOREA Template", moduleUrl: "/howto/modules/module-clone-template", sort_order: 20, description: "Clone, configure, and run the DESCARTES MOREA template", descartesModule: false}
 ],
  prerequisites: [
 ]

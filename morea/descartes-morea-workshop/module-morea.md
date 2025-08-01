@@ -1,6 +1,6 @@
 ---
 title: "Design and Implementation of DESCARTES Modules"
-published: true
+published: false
 morea_coming_soon: false
 morea_id: morea
 morea_outcomes:
@@ -27,7 +27,7 @@ morea_type: module
 morea_icon_url: /morea/descartes-morea-workshop/morea-logo.png
 morea_labels:
   - Module
-morea_sort_order: 10
+morea_sort_order: 99
 ---
 
 How to create a module using the Morea Framework.
