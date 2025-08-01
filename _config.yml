@@ -21,7 +21,9 @@ logger_factory:
 morea_course: "DES 201"
 morea_course_name: "UHM DESCARTES Course How-To"
 morea_description: "A course to demonstrate how to use the MOREA Template to create a DESCARTES course."
-morea_prerequisites: "DES 101"
+morea_prerequisites: 
+  - DES 101
+  - https://descartes.manoa.hawaii.edu/descartes-modules/modules/descartes-welcome/
 # morea_domain: http://morea-framework.github.io/
 # morea_google_analytics_tracking_id: "<your tracking id here>"
 # morea_head_breadcrumb_link: "http://cnn.com"

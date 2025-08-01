@@ -15,9 +15,13 @@ morea_assessments:
 morea_type: module
 morea_icon_url: 
 morea_labels:
-  - GitHub
-  - Morea
-  - Jekyll
+  - morea-structure
+  - git
+  - github
+  - static-sites
+  - version-control
+  - course-framework
+  - prerequisites
 morea_sort_order: 10
 ---
 
