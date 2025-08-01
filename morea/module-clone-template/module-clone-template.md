@@ -14,9 +14,14 @@ morea_experiences:
   - experience-clone-template
 morea_assessments:
 morea_labels:
-  - Morea Template
-  - GitHub Pages
-  - Local deployment
+  - github-desktop
+  - cloning
+  - jekyll
+  - local-setup
+  - site-structure
+  - template
+  - deployment
+  - github-pages
 ---
 
 This module introduces the DESCARTES MOREA template from GitHub, inspecting its structure, running it locally with Jekyll, and deploying through GitHub Pages.

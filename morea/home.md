@@ -47,43 +47,33 @@ This course guides educators at UH Mānoa, particularly within the DESCARTES ini
 
 ---
 
-### Module 3: Authoring Modules, Outcomes, and Readings
+### Module 3: Authoring Course Content in DESCARTES MOREA
 
 **Objectives**  
-- Use DESCARTES markdown templates to create `mod-`, `out-`, and `read-` files  
-- Populate required front matter fields according to DESCARTES metadata standards  
-- Connect internal resources using MOREA link conventions  
-- Design modules to function as independent units with clearly stated prerequisites
+- Create `module-`, `outcome-`, `reading-`, `experience-`, and `assessment-` files in the correct `_morea/module-name/` subdirectory  
+- Populate required front matter fields for each content type, including `morea_id`, `morea_type`, and `morea_summary`  
+- Use `morea_outcomes`, `morea_readings`, etc. arrays to link related content by ID  
+- Use `morea_sort_order` to sequence content within a module  
+- Link assessments to outcomes using `morea_outcomes_assessed`  
+- Validate file structure and metadata through successful site build and rendering
 
-**Estimated Time**: 2 hours  
+**Estimated Time**: 2.5 hours  
 **Prerequisites**: Module 2
 
 ---
 
-### Module 4: Authoring Experiences and Assessments
-
-**Objectives**  
-- Create `exp-` and `assess-` files to support instructional and evaluative components  
-- Embed code snippets, multimedia, and external tools relevant to DESCARTES content domains  
-- Define sequencing explicitly using `morea_sort_order` and cross-reference modules
-
-**Estimated Time**: 1 hours  
-**Prerequisites**: Module 3
-
----
-
-### Module 5: Customizing Layout and Style
+### Module 4: Customizing Layout and Style
 
 **Objectives**  
 - Modify `_layouts`, `_includes`, and `assets` to reflect DESCARTES branding and UI needs  
 - Customize the homepage and sidebar to emphasize modular course reuse and cross-linking 
 
 **Estimated Time**: 1 hour  
-**Prerequisites**: Module 4
+**Prerequisites**: Module 3
 
 ---
 
-### Module 6: Version Control and Collaboration
+### Module 5: Version Control and Collaboration
 
 **Objectives**  
 - Implement collaborative workflows using Git branches and pull requests  
@@ -95,7 +85,7 @@ This course guides educators at UH Mānoa, particularly within the DESCARTES ini
 
 ---
 
-### Module 7: Deployment and Maintenance
+### Module 6: Deployment and Maintenance
 
 **Objectives**  
 - Understand GitHub Actions for automated deployment  
@@ -109,7 +99,7 @@ This course guides educators at UH Mānoa, particularly within the DESCARTES ini
 
 ---
 
-### Module 8: Extending with Integrations
+### Module 7: Extending with Integrations
 
 **Objectives**  
 - Embed Google Forms, videos, Jupyter Notebooks, or H5P where pedagogically relevant  
