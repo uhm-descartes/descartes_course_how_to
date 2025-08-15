@@ -30,7 +30,7 @@ The core content exists in the `_morea/` folder and is divided by content type:
 - `experience-*.md`: Describes tasks, labs, or exercises.
 - `assessment-*.md`: Evaluates understanding or application.
 
-Templates for layout are located in `_layouts/` and `_includes/`. Static assets (CSS, JS, images) are stored in `assets/`.
+Templates for layout are located in `_layouts/` and `_includes/`. Static assets (CSS, JS, images) are stored in `morea/`.
 
 ---
 
